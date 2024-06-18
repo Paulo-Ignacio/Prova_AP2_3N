@@ -31,31 +31,6 @@ def menu_salvar_carregar():
         else:
             print("Escolha uma opção válida!")
 
-def menu_estatisticas():
-    while True:
-        print("*********************************")
-        print("********* ESTATÍSTICAS **********")
-        print("*********************************")
-        
-        print("""MENU DE ESTATÍSTICAS E ORDENAÇÃO
-        1 - Exibir a Média de IMCs
-        2 - Exibir o Maior e Menor IMC
-        3 - Exibir Contagem de Avaliados por IMC
-        4 - Voltar ao Menu Principal""")
-        
-        opc = int(input("Escolha uma opção: "))
-        
-        if opc == 1:
-            pass  # Criar Tarefa (4)
-        elif opc == 2:
-            pass  # Criar Tarefa (5)
-        elif opc == 3:
-            pass  # Criar Tarefa (6)
-        elif opc == 4:
-            break
-        else:
-            print("Escolha uma opção válida!")
-
 def classifica_imc(imc):
     if imc < 16:
         return "Magreza Grave"
@@ -160,8 +135,10 @@ while True:
                 pass  # Criar Tarefa
             
             elif sub_opc == 2:
-                pass  # Criar Tarefa
-            
+                maior_dado = min(avaliados)
+                print (f'O maior imc é: {maior_dado}')
+                menor_dado =  max(avaliados)
+                print(f'O menor imc é: {menor_dado}')
             elif sub_opc == 3:
                 pass  # Criar Tarefa
             
