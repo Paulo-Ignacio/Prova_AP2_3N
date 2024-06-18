@@ -139,6 +139,7 @@ while True:
                 print (f'O maior imc é: {maior_dado}')
                 menor_dado =  max(avaliados)
                 print(f'O menor imc é: {menor_dado}')
+                #Guilherme, victor e henrique
             elif sub_opc == 3:
                 pass  # Criar Tarefa
             
