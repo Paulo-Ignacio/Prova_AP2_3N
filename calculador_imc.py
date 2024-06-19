@@ -1,3 +1,11 @@
+def cont_aval (elemento):
+    for i in range (len(avaliados)+1):
+        retorno = 0
+        for j in range (i):
+            if elemento in avaliados [j]:
+                retorno += 1
+    return retorno
+
 def menu_salvar_carregar():
     while True:
         print("*********************************")
@@ -27,31 +35,6 @@ def menu_salvar_carregar():
             except FileNotFoundError:
                 print("Arquivo não encontrado.")
         elif opc == 3:
-            break
-        else:
-            print("Escolha uma opção válida!")
-
-def menu_estatisticas():
-    while True:
-        print("*********************************")
-        print("********* ESTATÍSTICAS **********")
-        print("*********************************")
-        
-        print("""MENU DE ESTATÍSTICAS E ORDENAÇÃO
-        1 - Exibir a Média de IMCs
-        2 - Exibir o Maior e Menor IMC
-        3 - Exibir Contagem de Avaliados por IMC
-        4 - Voltar ao Menu Principal""")
-        
-        opc = int(input("Escolha uma opção: "))
-        
-        if opc == 1:
-            pass  # Criar Tarefa (4)
-        elif opc == 2:
-            pass  # Criar Tarefa (5)
-        elif opc == 3:
-            pass  # Criar Tarefa (6)
-        elif opc == 4:
             break
         else:
             print("Escolha uma opção válida!")
@@ -163,7 +146,25 @@ while True:
                 pass  # Criar Tarefa
             
             elif sub_opc == 3:
-                pass  # Criar Tarefa
+
+                mg = cont_aval("Magreza Grave")
+                mm = cont_aval("Magreza Moderada")
+                ml = cont_aval("Magreza Leve")
+                pi = cont_aval("Peso Ideal")
+                sp = cont_aval("Sobrepeso")
+                ogi = cont_aval("Obesidade Grau I")
+                ogii = cont_aval("Obesidade Grau II")
+                ogiii = cont_aval("Obesidade Grau III")
+
+                print(f"""
+            Magreza Grave: {mg}
+            Magreza Moderada: {mm}
+            Magreza leve: {ml}
+            Peso ideal: {pi}
+            Sobrepeso: {sp}
+            Obesidade Grau I: {ogi}
+            Obesidade Grau II: {ogii}
+            Obesidade Grau III: {ogiii} """)
             
             elif sub_opc == 4:
                 continue
