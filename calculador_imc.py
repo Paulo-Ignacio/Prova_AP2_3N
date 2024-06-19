@@ -30,6 +30,10 @@ def menu_salvar_carregar():
             break
         else:
             print("Escolha uma opção válida!")
+def obter_imc(dados):
+    return dados[2]
+def ordenar(lista):
+    return sorted(lista, key=obter_imc)
 
 def menu_estatisticas():
     while True:
@@ -73,7 +77,7 @@ def classifica_imc(imc):
         return "Obesidade Grau II"
     else:
         return "Obesidade Grau III"
-
+        
 avaliados = []
 id = 0
 
@@ -131,8 +135,10 @@ while True:
                 pass  # Criar Tarefa (2)
             
             elif sub_opc == 4:
-                pass  # Criar Tarefa (3)
-            
+                lista_ordenada=ordenar(avaliados)
+                for dados in lista_ordenada:
+                    print(f"ID:{dados[0]} o IMC de {dados[1]} é {dados[2]} e está classificado como: {dados[3]}")   
+                
             elif sub_opc == 5:
                 continue
     
