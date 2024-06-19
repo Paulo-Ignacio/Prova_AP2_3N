@@ -1,4 +1,5 @@
 def menu_salvar_carregar():
+    
     while True:
         print("*********************************")
         print("**** SALVAR E CARREGAR DADOS ****")
@@ -27,31 +28,6 @@ def menu_salvar_carregar():
             except FileNotFoundError:
                 print("Arquivo não encontrado.")
         elif opc == 3:
-            break
-        else:
-            print("Escolha uma opção válida!")
-
-def menu_estatisticas():
-    while True:
-        print("*********************************")
-        print("********* ESTATÍSTICAS **********")
-        print("*********************************")
-        
-        print("""MENU DE ESTATÍSTICAS E ORDENAÇÃO
-        1 - Exibir a Média de IMCs
-        2 - Exibir o Maior e Menor IMC
-        3 - Exibir Contagem de Avaliados por IMC
-        4 - Voltar ao Menu Principal""")
-        
-        opc = int(input("Escolha uma opção: "))
-        
-        if opc == 1:
-            pass  # Criar Tarefa (4)
-        elif opc == 2:
-            pass  # Criar Tarefa (5)
-        elif opc == 3:
-            pass  # Criar Tarefa (6)
-        elif opc == 4:
             break
         else:
             print("Escolha uma opção válida!")
@@ -156,8 +132,17 @@ while True:
                   4 - Voltar ao Menu Principal""")
             sub_opc = int(input("Escolha uma opção: "))
             
+            # TAREFA 4 GRUPO DO VINICIUS
             if sub_opc == 1:
-                pass  # Criar Tarefa
+                tudo = []
+                cont = 0
+                for item in avaliados:
+                   cont += 1
+                   tudo.append(item[2])
+                   soma = sum(tudo)
+                   media = soma / cont
+                print(f"A média é: {media:.2f}")
+                   
             
             elif sub_opc == 2:
                 pass  # Criar Tarefa
